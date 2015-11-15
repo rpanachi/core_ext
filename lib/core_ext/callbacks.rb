@@ -7,7 +7,6 @@ require 'core_ext/module/attribute_accessors'
 require 'core_ext/string/filters'
 require 'core_ext/deprecation'
 require 'thread'
-require 'core_ext/descendants_tracker'
 
 module CoreExt
   # Callbacks are code hooks that are run at key points in an object's life cycle.
@@ -60,10 +59,6 @@ module CoreExt
   #   saved
   module Callbacks
     extend Concern
-
-    included do
-      extend CoreExt::DescendantsTracker
-    end
 
     CALLBACK_FILTER_TYPES = [:before, :after, :around]
 
@@ -556,10 +551,8 @@ module CoreExt
       # This is used internally to append, prepend and skip callbacks to the
       # CallbackChain.
       def __update_callbacks(name) #:nodoc:
-        ([self] + CoreExt::DescendantsTracker.descendants(self)).reverse_each do |target|
-          chain = target.get_callbacks name
-          yield target, chain.dup
-        end
+        chain = get_callbacks name
+        yield self, chain.dup
       end
 
       # Install a callback for the given event.
@@ -648,14 +641,7 @@ module CoreExt
       # Remove all set callbacks for the given event.
       def reset_callbacks(name)
         callbacks = get_callbacks name
-
-        CoreExt::DescendantsTracker.descendants(self).each do |target|
-          chain = target.get_callbacks(name).dup
-          callbacks.each { |c| chain.delete(c) }
-          target.set_callbacks name, chain
-        end
-
-        self.set_callbacks name, callbacks.dup.clear
+        set_callbacks name, callbacks.dup.clear
       end
 
       # Define sets of events in the object life cycle that support callbacks.

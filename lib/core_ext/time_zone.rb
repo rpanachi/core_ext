@@ -182,6 +182,8 @@ module CoreExt
     UTC_OFFSET_WITH_COLON = '%s%02d:%02d'
     UTC_OFFSET_WITHOUT_COLON = UTC_OFFSET_WITH_COLON.tr(':', '')
 
+    # TODO Add concurrent-ruby to support thread safe
+    # @lazy_zones_map = Concurrent::Map.new
     @lazy_zones_map = {}
 
     class << self

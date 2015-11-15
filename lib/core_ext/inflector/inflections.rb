@@ -24,6 +24,9 @@ module CoreExt
     # singularization rules that is runs. This guarantees that your rules run
     # before any of the rules that may already have been loaded.
     class Inflections
+
+      # TODO Add concurrent-ruby to support thread safe
+      # @__instance__ = Concurrent::Map.new
       @__instance__ = {}
 
       class Uncountables < Array

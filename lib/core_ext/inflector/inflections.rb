@@ -10,7 +10,7 @@ module CoreExt
     # an optional locale, rules for other languages can be specified. The
     # default locale is <tt>:en</tt>. Only rules for English are provided.
     #
-    #   ActiveSupport::Inflector.inflections(:en) do |inflect|
+    #   CoreExt::Inflector.inflections(:en) do |inflect|
     #     inflect.plural /^(ox)$/i, '\1\2en'
     #     inflect.singular /^(ox)en/i, '\1'
     #
@@ -227,7 +227,7 @@ module CoreExt
     # languages can be specified. If not specified, defaults to <tt>:en</tt>.
     # Only rules for English are provided.
     #
-    #   ActiveSupport::Inflector.inflections(:en) do |inflect|
+    #   CoreExt::Inflector.inflections(:en) do |inflect|
     #     inflect.uncountable 'rails'
     #   end
     def inflections(locale = :en)

@@ -58,8 +58,8 @@ module CoreExt
     #   transliterate('Jürgen')
     #   # => "Juergen"
     def transliterate(string, replacement = "?".freeze)
-      I18n.transliterate(ActiveSupport::Multibyte::Unicode.normalize(
-        ActiveSupport::Multibyte::Unicode.tidy_bytes(string), :c),
+      I18n.transliterate(CoreExt::Multibyte::Unicode.normalize(
+        CoreExt::Multibyte::Unicode.tidy_bytes(string), :c),
           :replacement => replacement)
     end
 
@@ -81,7 +81,7 @@ module CoreExt
     #
     def parameterize(string, sep = :unused, separator: '-', preserve_case: false)
       unless sep == :unused
-        ActiveSupport::Deprecation.warn("Passing the separator argument as a positional parameter is deprecated and will soon be removed. Use `separator: '#{sep}'` instead.")
+        CoreExt::Deprecation.warn("Passing the separator argument as a positional parameter is deprecated and will soon be removed. Use `separator: '#{sep}'` instead.")
         separator = sep
       end
       # Replace accented chars with their ASCII equivalents.

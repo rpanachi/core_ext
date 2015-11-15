@@ -1,6 +1,6 @@
 require 'core_ext/concern'
 
-module LoggerSilence
+module CoreExt::LoggerSilence
   extend CoreExt::Concern
 
   included do

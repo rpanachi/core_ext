@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name              = "core_ext"
   s.version           = CoreExt::VERSION
   s.date              = Time.now.strftime('%Y-%m-%d')
-  s.summary           = "ActiveSupport's core_ext without ActiveSupport"
-  s.description       = "ActiveSupport's core_ext without ActiveSupport dependency"
+  s.summary           = "ActiveSupport's core_ext for non Rails projects"
+  s.description       = "Utility classes and Ruby extensions for non Rails projects"
   s.homepage          = "http://github.com/rpanachi/core_ext"
   s.email             = ["rpanachi@gmail.com"]
   s.authors           = ["Rodrigo Panachi"]
@@ -28,5 +28,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'json',     '~> 1.7', '>= 1.7.7'
   s.add_runtime_dependency 'tzinfo',   '~> 1.1'
   s.add_runtime_dependency 'minitest', '~> 5.1'
-  s.add_runtime_dependency 'method_source', '~> 0.8'
+  s.add_runtime_dependency 'concurrent-ruby', '~> 1.0'
+  s.add_runtime_dependency 'method_source',   '~> 0.8'
 end

@@ -1,4 +1,5 @@
 require 'core_ext/array/prepend_and_append'
+require 'concurrent/map'
 require 'i18n'
 
 module CoreExt
@@ -24,10 +25,7 @@ module CoreExt
     # singularization rules that is runs. This guarantees that your rules run
     # before any of the rules that may already have been loaded.
     class Inflections
-
-      # TODO Add concurrent-ruby to support thread safe
-      # @__instance__ = Concurrent::Map.new
-      @__instance__ = {}
+      @__instance__ = Concurrent::Map.new
 
       class Uncountables < Array
         def initialize

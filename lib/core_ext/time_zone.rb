@@ -1,6 +1,7 @@
 require 'tzinfo'
 require 'core_ext/object/blank'
 require 'core_ext/object/try'
+require 'concurrent/map'
 
 module CoreExt
   # The TimeZone class serves as a wrapper around TZInfo::Timezone instances.
@@ -182,9 +183,7 @@ module CoreExt
     UTC_OFFSET_WITH_COLON = '%s%02d:%02d'
     UTC_OFFSET_WITHOUT_COLON = UTC_OFFSET_WITH_COLON.tr(':', '')
 
-    # TODO Add concurrent-ruby to support thread safe
-    # @lazy_zones_map = Concurrent::Map.new
-    @lazy_zones_map = {}
+    @lazy_zones_map = Concurrent::Map.new
 
     class << self
       # Assumes self represents an offset from UTC in seconds (as returned from

@@ -3,6 +3,7 @@ require 'multibyte_test_helpers'
 require 'stringio'
 require 'fileutils'
 require 'tempfile'
+require 'core_ext/logger'
 
 class LoggerTest < CoreExt::TestCase
   include MultibyteTestHelpers

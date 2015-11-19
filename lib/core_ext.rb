@@ -1,3 +1,4 @@
-Dir["#{File.dirname(__FILE__)}/core_ext/*.rb"].each do |path|
-  require path
+module CoreExt
 end
+
+require "core_ext/version"

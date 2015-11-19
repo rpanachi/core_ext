@@ -1,4 +1,5 @@
 require 'abstract_unit'
+require 'core_ext/rescuable'
 
 class WraithAttack < StandardError
 end

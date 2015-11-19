@@ -1,4 +1,5 @@
 require 'abstract_unit'
+require 'core_ext/benchmarkable'
 
 class BenchmarkableTest < CoreExt::TestCase
   include CoreExt::Benchmarkable

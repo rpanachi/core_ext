@@ -9,7 +9,7 @@ class ModuleConcerningTest < CoreExt::TestCase
 end
 
 class ModuleConcernTest < CoreExt::TestCase
-  def test_concern_creates_a_module_extended_with_active_support_concern
+  def test_concern_creates_a_module_extended_with_core_ext_concern
     klass = Class.new do
       concern :Baz do
         included { @foo = 1 }

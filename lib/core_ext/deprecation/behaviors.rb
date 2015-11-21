@@ -21,16 +21,11 @@ module CoreExt
             if defined?(Rails.logger) && Rails.logger
               Rails.logger
             else
-              require 'active_support/logger'
+              require 'core_ext/logger'
               CoreExt::Logger.new($stderr)
             end
         logger.warn message
         logger.debug callstack.join("\n  ") if debug
-      },
-
-      notify: ->(message, callstack) {
-        CoreExt::Notifications.instrument("deprecation.rails",
-                                                :message => message, :callstack => callstack)
       },
 
       silence: ->(message, callstack) {},
@@ -43,7 +38,6 @@ module CoreExt
     # [+raise+]   Raise <tt>CoreExt::DeprecationException</tt>.
     # [+stderr+]  Log all deprecation warnings to +$stderr+.
     # [+log+]     Log all deprecation warnings to +Rails.logger+.
-    # [+notify+]  Use +CoreExt::Notifications+ to notify +deprecation.rails+.
     # [+silence+] Do nothing.
     #
     # Setting behaviors only affects deprecations that happen after boot time.
@@ -65,7 +59,6 @@ module CoreExt
       # [+raise+]   Raise <tt>CoreExt::DeprecationException</tt>.
       # [+stderr+]  Log all deprecation warnings to +$stderr+.
       # [+log+]     Log all deprecation warnings to +Rails.logger+.
-      # [+notify+]  Use +CoreExt::Notifications+ to notify +deprecation.rails+.
       # [+silence+] Do nothing.
       #
       # Setting behaviors only affects deprecations that happen after boot time.

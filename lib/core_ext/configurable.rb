@@ -127,7 +127,7 @@ module CoreExt
 
     # Reads and writes attributes from a configuration <tt>OrderedHash</tt>.
     #
-    #   require 'active_support/configurable'
+    #   require 'core_ext/configurable'
     #
     #   class User
     #     include CoreExt::Configurable

@@ -342,7 +342,7 @@ class TestJSONEncoding < CoreExt::TestCase
     end
   end
 
-  def test_json_gem_dump_by_passing_active_support_encoder
+  def test_json_gem_dump_by_passing_core_ext_encoder
     h = HashWithAsJson.new
     h[:foo] = "hello"
     h[:bar] = "world"
@@ -351,7 +351,7 @@ class TestJSONEncoding < CoreExt::TestCase
     assert_nil h.as_json_called
   end
 
-  def test_json_gem_generate_by_passing_active_support_encoder
+  def test_json_gem_generate_by_passing_core_ext_encoder
     h = HashWithAsJson.new
     h[:foo] = "hello"
     h[:bar] = "world"
@@ -360,7 +360,7 @@ class TestJSONEncoding < CoreExt::TestCase
     assert_nil h.as_json_called
   end
 
-  def test_json_gem_pretty_generate_by_passing_active_support_encoder
+  def test_json_gem_pretty_generate_by_passing_core_ext_encoder
     h = HashWithAsJson.new
     h[:foo] = "hello"
     h[:bar] = "world"

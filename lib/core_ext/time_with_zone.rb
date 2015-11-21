@@ -199,7 +199,7 @@ module CoreExt
     # Accepts an optional <tt>format</tt>:
     # * <tt>:default</tt> - default value, mimics Ruby Time#to_s format.
     # * <tt>:db</tt> - format outputs time in UTC :db time. See Time#to_formatted_s(:db).
-    # * Any key in <tt>Time::DATE_FORMATS</tt> can be used. See active_support/core_ext/time/conversions.rb.
+    # * Any key in <tt>Time::DATE_FORMATS</tt> can be used. See core_ext/core_ext/time/conversions.rb.
     def to_s(format = :default)
       if format == :db
         utc.to_s(format)

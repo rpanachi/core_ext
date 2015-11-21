@@ -21,7 +21,7 @@ class JsonGemEncodingTest < CoreExt::TestCase
   JSONTest::EncodingTestCases.constants.each_with_index do |name|
     JSONTest::EncodingTestCases.const_get(name).each_with_index do |(subject, _), i|
       test("#{name[0..-6].underscore} #{i}") do
-        assert_same_with_or_without_active_support(subject)
+        assert_same_with_or_without_core_ext(subject)
       end
     end
   end
@@ -33,7 +33,7 @@ class JsonGemEncodingTest < CoreExt::TestCase
   end
 
   test "custom to_json" do
-    assert_same_with_or_without_active_support(CustomToJson.new)
+    assert_same_with_or_without_core_ext(CustomToJson.new)
   end
 
   private
@@ -41,7 +41,7 @@ class JsonGemEncodingTest < CoreExt::TestCase
       require(file) || skip("'#{file}' was already loaded")
     end
 
-    def assert_same_with_or_without_active_support(subject)
+    def assert_same_with_or_without_core_ext(subject)
       begin
         expected = JSON.generate(subject, quirks_mode: true)
       rescue JSON::GeneratorError => e

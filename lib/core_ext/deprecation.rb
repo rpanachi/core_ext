@@ -4,12 +4,12 @@ module CoreExt
   # \Deprecation specifies the API used by Rails to deprecate methods, instance
   # variables, objects and constants.
   class Deprecation
-    # active_support.rb sets an autoload for CoreExt::Deprecation.
+    # core_ext.rb sets an autoload for CoreExt::Deprecation.
     #
     # If these requires were at the top of the file the constant would not be
     # defined by the time their files were loaded. Since some of them reopen
     # CoreExt::Deprecation its autoload would be triggered, resulting in
-    # a circular require warning for active_support/deprecation.rb.
+    # a circular require warning for core_ext/deprecation.rb.
     #
     # So, we define the constant first, and load dependencies later.
     require 'core_ext/deprecation/instance_delegator'

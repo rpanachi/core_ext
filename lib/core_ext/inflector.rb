@@ -1,4 +1,4 @@
-# in case active_support/inflector is required without the rest of active_support
+# in case core_ext/inflector is required without the rest of core_ext
 require 'core_ext/inflector/inflections'
 require 'core_ext/inflector/transliterate'
 require 'core_ext/inflector/methods'

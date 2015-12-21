@@ -14,6 +14,7 @@ silence_warnings do
   Encoding.default_external = "UTF-8"
 end
 
+require 'core_ext/testing/autorun'
 require 'core_ext/testing/method_call_assertions'
 
 ENV['NO_RELOAD'] = '1'

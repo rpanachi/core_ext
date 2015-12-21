@@ -3,7 +3,7 @@ require 'rake/testtask'
 task :default => :test
 Rake::TestTask.new do |t|
   t.libs << 'test'
-  t.pattern = 'test/core_ext/**/*_test.rb'
+  t.pattern = 'test/**/*_test.rb'
   t.warning = false
   t.verbose = true
   t.ruby_opts = ["--dev"] if defined?(JRUBY_VERSION)

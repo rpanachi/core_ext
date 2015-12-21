@@ -418,8 +418,9 @@ module CoreExt
 
     # Available so that TimeZone instances respond like TZInfo::Timezone
     # instances.
+    # https://github.com/tzinfo/tzinfo/issues/32
     def period_for_local(time, dst=true)
-      tzinfo.period_for_local(time, dst)
+      tzinfo.period_for_local(time, dst) { |results| results.first }
     end
 
     def periods_for_local(time) #:nodoc:

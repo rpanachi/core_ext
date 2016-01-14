@@ -1,14 +1,14 @@
 module CoreExt
   module NumberHelper
 
-    require_relative "./number_helper/number_converter"
-    require_relative "./number_helper/number_to_rounded_converter"
-    require_relative "./number_helper/number_to_delimited_converter"
-    require_relative "./number_helper/number_to_human_converter"
-    require_relative "./number_helper/number_to_human_size_converter"
-    require_relative "./number_helper/number_to_phone_converter"
-    require_relative "./number_helper/number_to_currency_converter"
-    require_relative "./number_helper/number_to_percentage_converter"
+    require "core_ext/number_helper/number_converter"
+    require "core_ext/number_helper/number_to_rounded_converter"
+    require "core_ext/number_helper/number_to_delimited_converter"
+    require "core_ext/number_helper/number_to_human_converter"
+    require "core_ext/number_helper/number_to_human_size_converter"
+    require "core_ext/number_helper/number_to_phone_converter"
+    require "core_ext/number_helper/number_to_currency_converter"
+    require "core_ext/number_helper/number_to_percentage_converter"
 
     extend self
 

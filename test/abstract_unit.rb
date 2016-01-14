@@ -26,6 +26,9 @@ Thread.abort_on_exception = true
 # Show backtraces for deprecated behavior for quicker cleanup.
 CoreExt::Deprecation.debug = true
 
+# Disable available locale checks to avoid warnings running the test suite.
+I18n.enforce_available_locales = false
+
 # Skips the current run on Rubinius using Minitest::Assertions#skip
 def rubinius_skip(message = '')
   skip message if RUBY_ENGINE == 'rbx'

@@ -1,5 +1,6 @@
 require 'core_ext/big_decimal/conversions'
 require 'core_ext/deprecation'
+require 'core_ext/number_helper'
 
 module CoreExt::NumericWithFormat
 

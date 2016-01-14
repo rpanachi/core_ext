@@ -1,4 +1,5 @@
 require 'abstract_unit'
+require 'core_ext/gzip'
 require 'core_ext/object/blank'
 
 class GzipTest < CoreExt::TestCase

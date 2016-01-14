@@ -5,7 +5,7 @@ require 'constantize_test_cases'
 
 require 'core_ext/inflector'
 require 'core_ext/string'
-require 'time'
+require 'core_ext/time'
 require 'core_ext/string/strip'
 require 'core_ext/string/output_safety'
 require 'core_ext/string/indent'

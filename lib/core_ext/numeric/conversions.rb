@@ -76,6 +76,8 @@ module CoreExt::NumericWithFormat
   #  1234567.to_s(:human_size)                               # => 1.18 MB
   #  1234567890.to_s(:human_size)                            # => 1.15 GB
   #  1234567890123.to_s(:human_size)                         # => 1.12 TB
+  #  1234567890123456.to_s(:human_size)                      # => 1.1 PB
+  #  1234567890123456789.to_s(:human_size)                   # => 1.07 EB
   #  1234567.to_s(:human_size, precision: 2)                 # => 1.2 MB
   #  483989.to_s(:human_size, precision: 2)                  # => 470 KB
   #  1234567.to_s(:human_size, precision: 2, separator: ',') # => 1,2 MB
@@ -118,7 +120,11 @@ module CoreExt::NumericWithFormat
     when :human_size
       return CoreExt::NumberHelper.number_to_human_size(self, options)
     else
-      super
+      if is_a?(Float) || format.is_a?(Symbol)
+        super()
+      else
+        super
+      end
     end
   end
 

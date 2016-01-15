@@ -1,4 +1,6 @@
 require 'abstract_unit'
+require 'core_ext/date'
+require 'core_ext/time'
 
 module DateAndTimeBehavior
   def test_yesterday

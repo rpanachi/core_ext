@@ -1,6 +1,7 @@
 require 'abstract_unit'
-require 'time'
+require 'core_ext/time'
 require 'core_ext/array/conversions'
+require 'core_ext/i18n'
 
 class I18nTest < CoreExt::TestCase
   def setup

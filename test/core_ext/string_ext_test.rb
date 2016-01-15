@@ -1,10 +1,10 @@
-require 'date'
 require 'abstract_unit'
 require 'inflector_test_cases'
 require 'constantize_test_cases'
 
 require 'core_ext/inflector'
 require 'core_ext/string'
+require 'core_Ext/date'
 require 'core_ext/time'
 require 'core_ext/string/strip'
 require 'core_ext/string/output_safety'

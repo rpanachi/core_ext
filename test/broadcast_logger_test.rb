@@ -1,4 +1,5 @@
 require 'abstract_unit'
+require 'core_ext/logger'
 
 module CoreExt
   class BroadcastLoggerTest < TestCase

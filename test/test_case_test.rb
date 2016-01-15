@@ -1,4 +1,5 @@
 require 'abstract_unit'
+require 'core_ext/tagged_logging'
 
 class AssertDifferenceTest < CoreExt::TestCase
   def setup

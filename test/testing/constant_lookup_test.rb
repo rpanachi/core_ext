@@ -1,5 +1,4 @@
 require 'abstract_unit'
-require 'dependencies_test_helpers'
 
 class Foo; end
 class Bar < Foo
@@ -10,7 +9,6 @@ module FooBar; end
 
 class ConstantLookupTest < CoreExt::TestCase
   include CoreExt::Testing::ConstantLookup
-  include DependenciesTestHelpers
 
   def find_foo(name)
     self.class.determine_constant_from_test_name(name) do |constant|

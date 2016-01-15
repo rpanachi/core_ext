@@ -1,4 +1,5 @@
 require 'core_ext/concern'
+require 'core_ext/descendants_tracker'
 require 'core_ext/array/extract_options'
 require 'core_ext/class/attribute'
 require 'core_ext/kernel/reporting'
@@ -59,6 +60,10 @@ module CoreExt
   #   saved
   module Callbacks
     extend Concern
+
+    included do
+      extend CoreExt::DescendantsTracker
+    end
 
     CALLBACK_FILTER_TYPES = [:before, :after, :around]
 
@@ -551,8 +556,10 @@ module CoreExt
       # This is used internally to append, prepend and skip callbacks to the
       # CallbackChain.
       def __update_callbacks(name) #:nodoc:
-        chain = get_callbacks name
-        yield self, chain.dup
+        ([self] + CoreExt::DescendantsTracker.descendants(self)).reverse_each do |target|
+          chain = target.get_callbacks name
+          yield target, chain.dup
+        end
       end
 
       # Install a callback for the given event.
@@ -641,6 +648,12 @@ module CoreExt
       # Remove all set callbacks for the given event.
       def reset_callbacks(name)
         callbacks = get_callbacks name
+        CoreExt::DescendantsTracker.descendants(self).each do |target|
+          chain = target.get_callbacks(name).dup
+          callbacks.each { |c| chain.delete(c) }
+          target.set_callbacks name, chain
+        end
+
         set_callbacks name, callbacks.dup.clear
       end
 

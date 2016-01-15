@@ -5,7 +5,7 @@ require 'core_ext/module/delegation'
 require 'core_ext/string/inflections'
 require 'core_ext/date_time/calculations'
 
-module CodeExt
+module CoreExt
   # = XmlMini
   #
   # To use the much faster libxml parser:

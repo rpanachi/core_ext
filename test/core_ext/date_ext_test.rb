@@ -1,5 +1,5 @@
 require 'abstract_unit'
-require 'time'
+require 'core_ext/time'
 require 'core_ext/date_and_time_behavior'
 require 'time_zone_test_helpers'
 

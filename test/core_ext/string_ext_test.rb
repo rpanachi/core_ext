@@ -1,15 +1,16 @@
-require 'date'
 require 'abstract_unit'
 require 'inflector_test_cases'
 require 'constantize_test_cases'
 
 require 'core_ext/inflector'
 require 'core_ext/string'
-require 'time'
+require 'core_ext/date'
+require 'core_ext/time'
 require 'core_ext/string/strip'
 require 'core_ext/string/output_safety'
 require 'core_ext/string/indent'
 require 'time_zone_test_helpers'
+require 'timeout'
 
 class StringInflectionsTest < CoreExt::TestCase
   include InflectorTestCases
@@ -284,7 +285,7 @@ class StringInflectionsTest < CoreExt::TestCase
   end
 
   def test_truncate_words_with_complex_string
-    Timeout.timeout(10) do
+    Timeout.timeout(5) do
       complex_string = "aa aa aaa aa aaa aaa aaa aa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaaa aaaaa aaaaa aaaaaa aa aa aa aaa aa  aaa aa aa aa aa a aaa aaa \n a aaa <<s"
       assert_equal complex_string.truncate_words(80), complex_string
     end

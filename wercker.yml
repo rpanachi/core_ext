@@ -4,7 +4,7 @@ build:
         - bundle-install
         - script:
             name: test integrated
-            code: bundle exec rake test
+            code: TESTOPTS="--verbose" bundle exec rake test
         - script:
             name: test isolated
-            code: bundle exec rake test:isolated
+            code: TESTOPTS="--verbose" bundle exec rake test:isolated

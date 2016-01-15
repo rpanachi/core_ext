@@ -1,5 +1,5 @@
 require 'abstract_unit'
-require 'time'
+require 'core_ext/time'
 require 'time_zone_test_helpers'
 require 'core_ext/string/strip'
 require 'yaml'

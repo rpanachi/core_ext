@@ -1,5 +1,3 @@
-require 'dependencies_test_helpers'
-
 module Ace
   module Base
     class Case
@@ -25,7 +23,6 @@ class Object
 end
 
 module ConstantizeTestCases
-  include DependenciesTestHelpers
 
   def run_constantize_tests_on
     assert_equal Ace::Base::Case, yield("Ace::Base::Case")

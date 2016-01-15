@@ -56,6 +56,7 @@ module CoreExt
     include CoreExt::Testing::TaggedLogging
     include CoreExt::Testing::SetupAndTeardown
     include CoreExt::Testing::Assertions
+    include CoreExt::Testing::Deprecation
     include CoreExt::Testing::TimeHelpers
     include CoreExt::Testing::FileFixtures
     extend  CoreExt::Testing::Declarative

@@ -1,6 +1,7 @@
 require 'abstract_unit'
-require 'json'
+require 'core_ext/json'
 require 'core_ext/object/json'
+require 'core_ext/ordered_hash'
 require 'core_ext/hash/indifferent_access'
 require 'core_ext/array/extract_options'
 

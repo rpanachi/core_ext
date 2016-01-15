@@ -1,5 +1,5 @@
 require 'abstract_unit'
-require 'time'
+require 'core_ext/time'
 require 'core_ext/range'
 
 class RangeTest < CoreExt::TestCase

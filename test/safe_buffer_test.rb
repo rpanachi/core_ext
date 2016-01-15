@@ -1,5 +1,6 @@
 require 'abstract_unit'
 require 'core_ext/string/inflections'
+require 'core_ext/string/output_safety'
 require 'yaml'
 
 class SafeBufferTest < CoreExt::TestCase

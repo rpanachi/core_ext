@@ -7,7 +7,7 @@ Utility classes and Ruby extensions for non Rails projects.
 
 ## Philosophy
 
-CoreExt is a reduced fork of ActiveSupport, shipping only the *core_ext* part and its minimal dependencies. Some stufft like *Autoload*, *Caching*, *Logging*, *Notifications* and other Rails related classes are left behind. It was built with a few goals in mind:
+CoreExt is a reduced fork of Rails's ActiveSupport gem, shipping only the *core_ext* part and its minimal dependencies. Some stufft like *Autoload*, *Caching*, *Logging*, *Notifications* and other Rails related classes are left behind. It was built with a few goals in mind:
 
 * Pick only what you need - use (or require) only the modules or classes that you need on your project, without load (and override) the entire stack.
 * Embrace the magic - Patching Ruby core classes - excuse me the purists - is more productive that using tons of utils classes spread throughtout your project. And this, ActiveSupport does well.
@@ -50,7 +50,7 @@ require "core_ext/time"
 
 ## Documentation
 
-[Active Support Core Extensions](http://guides.rubyonrails.org/active_support_core_extensions.html)
+See [Rail's ActiveSupport Core Extensions](http://guides.rubyonrails.org/active_support_core_extensions.html) documentation.
 
 ## Contributing
 
@@ -59,3 +59,9 @@ require "core_ext/time"
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+Ruby on Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+
+CoreExt is released under the [MIT License](http://www.opensource.org/licenses/MIT).

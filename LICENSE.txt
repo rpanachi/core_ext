@@ -1,4 +1,5 @@
-Copyright (c) 2015 Ruby Community
+Rails/ActiveSupport Copyright (c) 2005-2016 David Heinemeier Hansson
+CoreExt Copyright (c) 2016 Ruby Community
 
 MIT License
 

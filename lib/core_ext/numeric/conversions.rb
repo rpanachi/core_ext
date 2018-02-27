@@ -134,6 +134,12 @@ module CoreExt::NumericWithFormat
   deprecate to_formatted_s: :to_s
 end
 
-[Fixnum, Bignum, Float, BigDecimal].each do |klass|
-  klass.prepend(CoreExt::NumericWithFormat)
+# Ruby 2.4+ unifies Fixnum & Bignum into Integer.
+if 0.class == Integer
+  Integer.prepend CoreExt::NumericWithFormat
+else
+  Fixnum.prepend CoreExt::NumericWithFormat
+  Bignum.prepend CoreExt::NumericWithFormat
 end
+Float.prepend CoreExt::NumericWithFormat
+BigDecimal.prepend CoreExt::NumericWithFormat
